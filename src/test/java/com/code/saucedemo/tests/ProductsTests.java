@@ -10,12 +10,12 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class ProductsTests {
+public class ProductsTests extends BaseTest {
 
     @Test
     public void verifyAddProductToCartByName() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        ChromeDriver driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        //ChromeDriver driver = new ChromeDriver();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openPage();
         loginPage.login(new User("standard_user", "secret_sauce"));
@@ -29,13 +29,13 @@ public class ProductsTests {
         int numOfProductsAfterAdd = productsPage.getNumOfProductsInCart();
         Assert.assertEquals(numOfProductsAfterAdd, numOfProductsBeforeAdd + 3, "Number of products is not as expected");
 
-        productsPage.close();
+        //productsPage.close();
     }
 
     @Test
     public void verifySortingProductsListByPriceLowToHigh() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        ChromeDriver driver = new ChromeDriver();
+        //System.setProperty("webdriver.chrome.driver", "C:\\Users\\comp\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        //ChromeDriver driver = new ChromeDriver();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.openPage();
         loginPage.login(new User("standard_user", "secret_sauce"));
@@ -52,7 +52,7 @@ public class ProductsTests {
             }
         }
         Assert.assertEquals(sorting, true, "Sorting is not as expected");
-        productsPage.close();
+        //productsPage.close();
     }
 
 }
